@@ -8,8 +8,8 @@ This is a solution to the [3-column preview card component challenge on Frontend
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontendmentor solution page](https://www.frontendmentor.io/solutions/3-column-preview-card-component-Bkkq24BS5)
+- Live Site URL: [GitHub Pages site](https://karolbanat.github.io/3-column-preview-card-component/)
 
 ## Author
 
