@@ -1,0 +1,166 @@
+:root {
+	// colors
+	--clr-primary-300: hsl(31, 77%, 52%);
+	--clr-primary-400: hsl(184, 100%, 22%);
+	--clr-primary-500: hsl(179, 100%, 13%);
+
+	--clr-neutral-200: hsla(0, 0%, 100%, 0.75);
+	--clr-neutral-600: hsl(0, 0%, 95%);
+
+	// font families
+	--ff-primary: 'Lexend Deca', sans-serif;
+	--ff-title: 'Big Shoulders Display', cursive;
+
+	// spacing
+	--spacing-1: 3rem;
+	--spacing-2: 3.5rem;
+
+	--spacing-100: 0.75em;
+	--spacing-200: 1.5em;
+	--spacing-300: 2em;
+	--spacing-500: 3em;
+	--spacing-800: 5.5em;
+
+	// radius
+	--radius-400: 0.5em;
+
+	// stage
+	--bg-body: var(--clr-neutral-600);
+	--heading: var(--clr-neutral-600);
+	--text: var(--clr-neutral-200);
+
+	--card-radius: var(--radius-400);
+
+	--bg-button: var(--clr-neutral-600);
+	--button-border: var(--clr-neutral-600);
+	--button-hover: var(--clr-neutral-600);
+}
+
+// RESET
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: var(--ff-primary);
+	background-color: var(--bg-body);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+// main css
+main {
+	display: grid;
+	place-content: center;
+	padding: var(--spacing-800) var(--spacing-200);
+	min-height: 100vh;
+}
+
+h1 {
+	margin-bottom: var(--spacing-2);
+	font-family: var(--ff-title);
+	text-transform: uppercase;
+	font-size: 4rem;
+	color: var(--heading);
+}
+
+// cards container
+.cards {
+	max-width: 57.5em;
+
+	@media (min-width: 44em) {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+// card
+.card {
+	// display grid for aligning buttons on the bottom
+	display: grid;
+	place-items: start;
+
+	padding: var(--spacing-500);
+	background-color: var(--bg-card);
+
+	&:first-of-type {
+		border-radius: var(--card-radius) var(--card-radius) 0 0;
+
+		@media (min-width: 44em) {
+			border-radius: var(--card-radius) 0 0 var(--card-radius);
+		}
+	}
+
+	&:last-of-type {
+		border-radius: 0 0 var(--card-radius) var(--card-radius);
+
+		@media (min-width: 44em) {
+			border-radius: 0 var(--card-radius) var(--card-radius) 0;
+		}
+	}
+
+	&__img {
+		margin-bottom: var(--spacing-2);
+	}
+
+	&__text {
+		font-size: 1.5rem;
+		line-height: 1.6;
+		color: var(--text);
+	}
+
+	&__btn {
+		margin-top: var(--spacing-1);
+		padding: var(--spacing-100) var(--spacing-300);
+		font-size: 1.5rem;
+		font-family: var(--ff-primary);
+		text-transform: capitalize;
+		background-color: var(--bg-button);
+		color: var(--button);
+		border: 2px solid var(--button-border);
+		border-radius: 20em;
+		cursor: pointer;
+		transition: background-color 0.35s ease, color 0.35s ease, border 0.35s ease;
+
+		&:hover {
+			background-color: var(--bg-button-hover);
+			color: var(--button-hover);
+		}
+
+		@media (min-width: 44em) {
+			//aligning button on the end so all the buttons are in the same line
+			align-self: end;
+			margin-top: var(--spacing-800);
+		}
+	}
+
+	&--orange {
+		--bg-card: var(--clr-primary-300);
+		--button: var(--clr-primary-300);
+		--bg-button-hover: var(--clr-primary-300);
+	}
+
+	&--marine {
+		--bg-card: var(--clr-primary-400);
+		--button: var(--clr-primary-400);
+		--bg-button-hover: var(--clr-primary-400);
+	}
+
+	&--dark-green {
+		--bg-card: var(--clr-primary-500);
+		--button: var(--clr-primary-500);
+		--bg-button-hover: var(--clr-primary-600);
+	}
+}
